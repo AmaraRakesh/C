@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    char string[20];
+    int len,i,j;
+    printf("Enter the string:\n");
+    scanf("%[^\n]",string);
+    for(len=0;string[len];len++); //Calculating the length of the string.
+    for(i=0,j=len-1;i<j;i++,j--)
+        if(string[i]!=string[j]){
+            printf("Not palindrom\n");
+	    return 0;
+	}
+        
+    printf("Palindrom\n");   
+    return 0;
+}

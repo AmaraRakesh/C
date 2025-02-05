@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main()
+{
+    char string[20],chr;
+    printf("Enter the string:\n");
+    scanf("%[^\n]",string);
+    for(int idx=0;string[idx];idx++)
+    {
+        for(int j=idx+1;string[j];j++)
+        {
+            if(string[idx]==string[j])
+            {
+                for(int k=j;string[k];k++)
+                    string[k]=string[k+1];
+                    
+                    idx--;
+            }
+        }
+      
+    }
+    printf("%s\n",string);
+    return 0;
+}
