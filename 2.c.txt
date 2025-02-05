@@ -1,0 +1,44 @@
+/* Method-1 */
+#include <stdio.h>
+int main()
+{
+    char string[20];
+    int vowels_count,idx;
+    printf("Enter the string:\n");
+    scanf("%[^\n]",string);
+    for(idx=0,vowels_count=0;string[idx];idx++)
+        if(string[idx]=='a'||string[idx]=='e'||string[idx]=='i'||string[idx]=='o'||string[idx]=='u'||
+        string[idx]=='A'||string[idx]=='E'||string[idx]=='I'||string[idx]=='O'||string[idx]=='U')
+            vowels_count++;
+    
+    printf("word_count=%d\n",vowels_count);
+    
+    return 0;
+}
+
+
+
+/*Method-2*/	
+#include <stdio.h>
+#include <string.h>
+int vowels_count(char *);
+
+int main()
+{
+    char string[20];
+    printf("Enter the string:\n");
+    scanf("%[^\n]",string);
+    printf("vowel_count=%d\n",vowels_count(string));
+    
+    return 0;
+}
+int vowels_count(char *s)
+{
+    int count,idx;
+    char *p="aeiouAEIOU";
+    for(idx=0,count=0;s[idx];idx++)
+        if(strchr(p,s[idx]))
+        count++;
+    
+    return count;
+}

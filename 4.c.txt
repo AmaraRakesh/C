@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main()
+{
+    char string[20],chr;
+    
+    printf("Enter the string:\n");
+    scanf("%[^\n]",string);
+    printf("Enter the character:\n");
+    scanf(" %c",&chr);
+    for(int idx=0,cnt=0;string[idx];idx++)
+    {
+        if(string[idx]==chr)
+        {
+            cnt++;
+            for(int j=idx;string[j];j++)
+                string[j]=string[j+1];
+                idx--;
+        }
+        if(cnt==2)
+        {
+            printf("%s\n",string);
+            return 0;
+        }
+    }
+    return 0;
+}

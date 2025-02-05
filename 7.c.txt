@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+    char string[20];
+    int j,cnt,flag,k;
+    printf("Enter the string:\n");
+    scanf("%[^\n]",string);
+    for(int idx=0;string[idx];idx++)
+    {
+        for(flag=1,k=0;k<idx;k++)
+            if(string[k]==string[idx])
+                flag=0;
+        
+        if(flag){
+        for(j=idx+1,cnt=1;string[j];j++)
+        {
+            if(string[idx]==string[j])
+                cnt++;
+            
+        }
+        if(cnt!=1)
+        printf("%c->%dtimes\n",string[idx],cnt);
+        }
+    }
+
+    return 0;
+}

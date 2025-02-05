@@ -1,0 +1,16 @@
+#include stdio.h
+
+int main()
+{
+    char string[20];
+    int word_count,idx;
+    printf(Enter the stringn);
+    scanf(%[^n],string);
+    for(idx=0,word_count=1;string[idx];idx++)
+        if(string[idx]==' ')
+            word_count++;
+    
+    printf(word_count=%dn,word_count);
+    
+    return 0;
+}
